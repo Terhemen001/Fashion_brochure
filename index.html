@@ -1,4 +1,8 @@
-<!doctype html>
+# Generate updated main brochure (with image links) and 4 collection pages (each with 10 live image URLs).
+
+files = {
+
+    "/mnt/data/gentlemen_nigeria_hamburger_links.html": """<!doctype html>
 
 <html lang="en">
 
@@ -14,63 +18,67 @@
 
     :root{--bg:#f6f6f7;--charcoal:#111213;--gold:#d4af37;--muted:#6b7280;--card:#ffffff;}
 
-    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--charcoal);background:var(--bg);-webkit-font-smoothing:antialiased;}
+    *{box-sizing:border-box;margin:0;padding:0;}
 
-    .nav{background:linear-gradient(90deg, rgba(17,17,19,0.98), rgba(17,17,19,0.95));position:sticky;top:0;z-index:40;padding:12px 20px;box-shadow:0 6px 18px rgba(6,7,9,0.12);}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--charcoal);background:var(--bg);}
 
-    .nav .wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    header.nav{background:rgba(17,17,19,0.96);position:sticky;top:0;z-index:100;padding:12px 20px;box-shadow:0 6px 18px rgba(6,7,9,0.12);}
 
-    .brand{color:var(--gold);font-weight:700;letter-spacing:0.6px;}
+    .nav .wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;position:relative;}
+
+    .brand{color:var(--gold);font-weight:700;font-size:18px;letter-spacing:0.6px;}
 
     .menu{display:flex;gap:14px;}
 
-    .menu a{color:#fff;text-decoration:none;font-size:14px;padding:8px 10px;border-radius:8px;opacity:0.95;}
+    .menu a{color:#fff;text-decoration:none;font-size:14px;padding:8px 10px;border-radius:8px;transition:color 0.3s;}
 
-    .menu a:hover{background:rgba(255,255,255,0.04);}
+    .menu a:hover{color:var(--gold);}
 
-    .container{max-width:1200px;margin:28px auto;padding:0 18px;}
+    .hamburger{display:none;font-size:24px;color:var(--gold);cursor:pointer;background:none;border:none;}
 
-    .hero{display:flex;flex-direction:column;gap:18px;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.00));padding:22px;border-radius:14px;}
+    .menu.mobile{display:none;flex-direction:column;background:rgba(17,17,19,0.95);position:absolute;top:100%;left:0;width:100%;text-align:center;animation:slideDown 0.4s ease forwards;}
 
-    .hero-inner{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center;}
+    .menu.mobile a{padding:14px;border-bottom:1px solid rgba(255,255,255,0.08);color:#fff;text-decoration:none;}
 
-    .hero h1{margin:0;font-size:34px;color:var(--charcoal);}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
 
-    .hero p.lead{margin:6px 0;color:var(--muted);font-size:15px;line-height:1.5;}
+    @media(max-width:900px){.hamburger{display:block}.menu.desktop{display:none}}
 
-    .cta{background:var(--gold);color:var(--charcoal);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;}
+    .container{max-width:1200px;margin:28px auto;padding:0 16px;}
 
-    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 10px 30px rgba(16,24,40,0.06);}
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 10px 30px rgba(16,24,40,0.06);margin-bottom:20px;}
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:14px;}
+    h1,h2{color:var(--charcoal);margin-bottom:8px;}
 
-    .grid img{width:100%;height:180px;object-fit:cover;border-radius:8px;}
+    .muted{color:var(--muted);}
 
-    h2.section-title{font-size:20px;margin:0 0 8px 0;color:var(--charcoal);}
+    .hero{display:flex;flex-direction:column;gap:16px;padding:22px;}
 
-    p.muted{color:var(--muted);margin:0 0 12px 0;}
+    .hero img{width:100%;border-radius:10px;height:auto;object-fit:cover;}
 
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    .cta{background:var(--gold);color:var(--charcoal);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;}
+
+    .grid,.gallery{display:grid;gap:12px;}
+
+    .grid img,.gallery img{width:100%;border-radius:8px;height:auto;object-fit:cover;cursor:pointer;transition:box-shadow .25s}
+
+    .grid img:hover,.gallery img:hover{box-shadow:0 10px 30px rgba(13,20,30,0.18);outline:3px solid rgba(207,163,74,0.12)}
+
+    .two-col{display:grid;gap:16px;}
 
     footer{margin-top:28px;padding:30px 18px;text-align:center;color:var(--muted);font-size:14px;}
 
-    .contact{display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:center;}
+    .contact{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
 
-    .tag{display:inline-block;background:#f2f2f2;padding:6px 10px;border-radius:999px;font-size:13px;color:#444;}
+    .tag{background:#f2f2f2;padding:6px 10px;border-radius:999px;font-size:13px;color:#444;}
 
-    @media(max-width:920px){ .hero-inner{grid-template-columns:1fr;} .two-col{grid-template-columns:1fr;} .menu{display:none;} }
+    @media(min-width:600px){.grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.two-col{grid-template-columns:1fr 1fr}}
 
-    nav .menu-toggle{display:none;}
+    @media(min-width:900px){.hero{flex-direction:row;align-items:center}.hero img{width:50%;height:320px}}
 
-    .nav .actions{display:flex;gap:8px;align-items:center;}
+    .floating-cta{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--charcoal);padding:12px 18px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,0.25);z-index:99}
 
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;}
-
-    .small{font-size:13px;color:var(--muted);}
-
-    .divider{height:1px;background:#eef2f6;margin:18px 0;border-radius:2px;}
-
-    html {scroll-behavior:smooth;}
+    @media(min-width:900px){.floating-cta{display:none}}
 
   </style>
 
@@ -78,40 +86,799 @@
 
 <body>
 
-  <header class="nav">
+<header class="nav">
 
-    <div class="wrap">
+  <div class="wrap">
 
-      <div class="brand">Gentlemen of Nigeria</div>
+    <div class="brand">Gentlemen of Nigeria</div>
 
-      <nav class="menu" aria-label="Main navigation">
+    <nav class="menu desktop">
 
-        <a href="#vision">Vision</a>
+      <a href="#vision">Vision</a>
 
-        <a href="#traditional">Traditional</a>
+      <a href="#traditional">Traditional</a>
 
-        <a href="#urban">Urban & Business</a>
+      <a href="#urban">Urban</a>
 
-        <a href="#casual">Casual</a>
+      <a href="#casual">Casual</a>
 
-        <a href="#craft">Craftsmanship</a>
+      <a href="#craft">Craftsmanship</a>
 
-        <a href="#contact">Contact</a>
+      <a href="#contact">Contact</a>
 
-      </nav>
+    </nav>
 
-      <div class="actions">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-        <a class="cta" href="#contact">Book a Fitting</a>
+  </div>
 
-      </div>
+  <nav id="mobileMenu" class="menu mobile" aria-hidden="true">
+
+    <a href="#vision" onclick="toggleMenu()">Vision</a>
+
+    <a href="#traditional" onclick="toggleMenu()">Traditional</a>
+
+    <a href="#urban" onclick="toggleMenu()">Urban</a>
+
+    <a href="#casual" onclick="toggleMenu()">Casual</a>
+
+    <a href="#craft" onclick="toggleMenu()">Craftsmanship</a>
+
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+
+  </nav>
+
+</header>
+
+
+
+<main class="container">
+
+  <section class="hero card" id="cover">
+
+    <div>
+
+      <h1>Gentlemen of Nigeria</h1>
+
+      <p class="muted">The Premium Men’s Collection — blending Nigerian heritage with global tailoring. From noble agbadas to modern suits, our pieces are crafted for the discerning man.</p>
+
+      <a href="#traditional" class="cta">Explore the Collection</a>
 
     </div>
 
-  </header>
+    <img src="https://assets.vogue.com/photos/58770777ef8cc67551002b05/master/w_2848%2Ch_4272%2Cc_limit/01-nigerian-fashion-week-mens-street-style.jpg" alt="Nigerian Fashion">
+
+  </section>
 
 
 
+  <section id="vision" class="card">
+
+    <h2>Our Vision</h2>
+
+    <p class="muted">We celebrate the modern Nigerian gentleman — combining traditional craftsmanship with contemporary silhouettes.</p>
+
+  </section>
+
+
+
+  <section id="traditional" class="card">
+
+    <h2>Traditional Heritage Wear</h2>
+
+    <p class="muted">Regal Agbadas · Modern Kaftans · Senator Wear</p>
+
+    <div class="gallery">
+
+      <a href="traditional.html"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5295786566_n7me.jpg?v=1703837852" alt="Agbada"></a>
+
+      <a href="traditional.html"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5344251201_svly.jpg?v=1698360220" alt="Kaftan"></a>
+
+      <a href="traditional.html"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5340655073_k4ps.jpg?v=1698360176" alt="Senator Wear"></a>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="urban" class="card">
+
+    <h2>Urban & Business Attire</h2>
+
+    <p class="muted">Tailored suits, statement blazers and smart casuals.</p>
+
+    <div class="grid">
+
+      <a href="urban.html"><img src="https://i.etsystatic.com/21267747/r/il/5c6a89/2252931332/il_fullxfull.2252931332_kjv5.jpg" alt="Suit"></a>
+
+      <a href="urban.html"><img src="https://i.etsystatic.com/13094714/r/il/44137a/4251093012/il_fullxfull.4251093012_onaj.jpg" alt="Blazer"></a>
+
+      <a href="urban.html"><img src="https://www.diyanu.com/cdn/shop/products/Enofe-Mens-African-Print-1.jpg?v=1760579351" alt="Smart Casual"></a>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="casual" class="card">
+
+    <h2>Casual & Lifestyle</h2>
+
+    <p class="muted">Statement shirts, premium denim & relaxed fits.</p>
+
+    <div class="grid">
+
+      <a href="casual.html"><img src="https://m.media-amazon.com/images/I/51LhCyk%2BngL.jpg" alt="Casual"></a>
+
+      <a href="casual.html"><img src="https://kipfashion.com/wp-content/uploads/2020/08/Bobby-African-print-embroidery-shirt.jpg" alt="Print Shirt"></a>
+
+      <a href="casual.html"><img src="https://cdn.businessday.ng/wp-content/uploads/2024/10/Untitled-design-63-1.png" alt="Street Style"></a>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="craft" class="card">
+
+    <h2>Craftsmanship & Fabric</h2>
+
+    <p class="muted">Tailoring, textures and attention to detail.</p>
+
+    <div class="grid">
+
+      <a href="craftsmanship.html"><img src="https://res.cloudinary.com/sagacity/image/upload/c_crop%2Ch_4800%2Cw_3397%2Cx_0%2Cy_0/c_limit%2Cdpr_auto%2Cf_auto%2Cfl_lossy%2Cq_80%2Cw_1080/0118-style-tony-iyke_twrxks.jpg" alt="Fabric"></a>
+
+      <a href="craftsmanship.html"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5299697147_gvzy.jpg?v=1698366208" alt="Tailoring"></a>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="contact" class="card">
+
+    <h2>Contact & Showroom</h2>
+
+    <div class="contact">
+
+      <div class="tag">25 Adewale Street, VI, Lagos</div>
+
+      <div class="tag">info@gentlemenofnigeria.ng</div>
+
+      <div class="tag">+234 800 123 4567</div>
+
+    </div>
+
+  </section>
+
+
+
+  <footer>
+
+    &copy; 2025 Gentlemen of Nigeria • Designed for the distinguished Nigerian gentleman
+
+  </footer>
+
+</main>
+
+
+
+<a href="#contact" class="floating-cta">📞 Book a Fitting</a>
+
+
+
+<script>
+
+function toggleMenu(){
+
+  const menu=document.getElementById('mobileMenu');
+
+  const isHidden = menu.getAttribute('aria-hidden') === 'true';
+
+  menu.style.display = isHidden ? 'flex' : 'none';
+
+  menu.setAttribute('aria-hidden', !isHidden);
+
+}
+
+</script>
+
+</body>
+
+</html>""",
+
+
+
+    "/mnt/data/traditional.html": """<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Traditional Heritage — Gentlemen of Nigeria</title>
+
+<style>:root{--gold:#d4af37;--bg:#fff;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}p.muted{color:var(--muted)}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover} .grid{display:grid;gap:10px} @media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}} .card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 10px 20px rgba(16,24,40,0.06)} .back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
+
+<header><div class="brand">Gentlemen of Nigeria — Traditional Heritage</div></header>
+
+<main>
+
+  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+
+  <h1>Traditional Heritage Collection</h1>
+
+  <p class="muted">Agbadas · Kaftans · Senator Wear — curated for ceremonial and formal moments.</p>
+
+  <div class="hero" style="margin-top:12px;"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5295786566_n7me.jpg?v=1703837852" alt="Hero Agbada"></div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5295786566_n7me.jpg?v=1703837852" alt="1">
+
+    <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5344251201_svly.jpg?v=1698360220" alt="2">
+
+    <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5340655073_k4ps.jpg?v=1698360176" alt="3">
+
+    <img src="https://otunbastore.com/cdn/shop/files/4.png?v=1708225884&width=1946" alt="4">
+
+    <img src="https://otunbastore.com/cdn/shop/files/10.png?v=1708225557&width=1946" alt="5">
+
+    <img src="https://otunbastore.com/cdn/shop/files/43c01ca3ae51e54f863a89d9fba3bafe_a514d53575f8.jpg?v=1708225682" alt="6">
+
+    <img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c" alt="7">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11" alt="8">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11?ixlib=rb-4.0.3&q=80&w=1200&auto=format&fit=crop&crop=faces" alt="9">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="10">
+
+  </div>
+
+</main>
+
+</body></html>""",
+
+
+
+    "/mnt/data/urban.html": """<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Urban & Business — Gentlemen of Nigeria</title>
+
+<style>:root{--gold:#d4af37;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover}.grid{display:grid;gap:10px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}.back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
+
+<header><div class="brand">Gentlemen of Nigeria — Urban & Business</div></header>
+
+<main>
+
+  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+
+  <h1>Urban & Business Collection</h1>
+
+  <p class="muted">Suits · Blazers · Smart casual — city-ready tailoring and statement pieces.</p>
+
+  <div class="hero" style="margin-top:12px;"><img src="https://i.etsystatic.com/21267747/r/il/5c6a89/2252931332/il_fullxfull.2252931332_kjv5.jpg" alt="Hero Suit"></div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <img src="https://i.etsystatic.com/21267747/r/il/5c6a89/2252931332/il_fullxfull.2252931332_kjv5.jpg" alt="1">
+
+    <img src="https://i.etsystatic.com/13094714/r/il/44137a/4251093012/il_fullxfull.4251093012_onaj.jpg" alt="2">
+
+    <img src="https://www.diyanu.com/cdn/shop/products/Enofe-Mens-African-Print-1.jpg?v=1760579351" alt="3">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11" alt="4">
+
+    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="5">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="6">
+
+    <img src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg" alt="7">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11?ixlib=rb-4.0.3&q=80&w=1200&auto=format&fit=crop&crop=faces" alt="8">
+
+    <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" alt="9">
+
+    <img src="https://images.unsplash.com/photo-1531123414780-f403c4f2d5cc" alt="10">
+
+  </div>
+
+</main>
+
+</body></html>""",
+
+
+
+    "/mnt/data/casual.html": """<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Casual & Lifestyle — Gentlemen of Nigeria</title>
+
+<style>:root{--gold:#d4af37;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover}.grid{display:grid;gap:10px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}.back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
+
+<header><div class="brand">Gentlemen of Nigeria — Casual & Lifestyle</div></header>
+
+<main>
+
+  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+
+  <h1>Casual & Lifestyle Collection</h1>
+
+  <p class="muted">Relaxed fits, prints and weekend-ready looks.</p>
+
+  <div class="hero" style="margin-top:12px;"><img src="https://m.media-amazon.com/images/I/51LhCyk%2BngL.jpg" alt="Hero Casual"></div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <img src="https://m.media-amazon.com/images/I/51LhCyk%2BngL.jpg" alt="1">
+
+    <img src="https://kipfashion.com/wp-content/uploads/2020/08/Bobby-African-print-embroidery-shirt.jpg" alt="2">
+
+    <img src="https://cdn.businessday.ng/wp-content/uploads/2024/10/Untitled-design-63-1.png" alt="3">
+
+    <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg" alt="4">
+
+    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="5">
+
+    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="6">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="7">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11" alt="8">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="9">
+
+    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="10">
+
+  </div>
+
+</main>
+
+</body></html>""",
+
+
+
+    "/mnt/data/craftsmanship.html": """<!doctype html>
+
+<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Craftsmanship — Gentlemen of Nigeria</title>
+
+<style>:root{--gold:#d4af37;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover}.grid{display:grid;gap:10px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}.back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
+
+<header><div class="brand">Gentlemen of Nigeria — Craftsmanship</div></header>
+
+<main>
+
+  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+
+  <h1>Craftsmanship & Details</h1>
+
+  <p class="muted">Close-ups on tailoring, texture and finishes.</p>
+
+  <div class="hero" style="margin-top:12px;"><img src="https://res.cloudinary.com/sagacity/image/upload/c_crop%2Ch_4800%2Cw_3397%2Cx_0%2Cy_0/c_limit%2Cdpr_auto%2Cf_auto%2Cfl_lossy%2Cq_80%2Cw_1080/0118-style-tony-iyke_twrxks.jpg" alt="Hero Craftsmanship"></div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <img src="https://res.cloudinary.com/sagacity/image/upload/c_crop%2Ch_4800%2Cw_3397%2Cx_0%2Cy_0/c_limit%2Cdpr_auto%2Cf_auto%2Cfl_lossy%2Cq_80%2Cw_1080/0118-style-tony-iyke_twrxks.jpg" alt="1">
+
+    <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5299697147_gvzy.jpg?v=1698366208" alt="2">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="3">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11" alt="4">
+
+    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="5">
+
+    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="6">
+
+    <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg" alt="7">
+
+    <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" alt="8">
+
+    <img src="https://images.unsplash.com/photo-1531123414780-f403c4f2d5cc" alt="9">
+
+    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="10">
+
+  </div>
+
+</main>
+
+</body></html>"""
+
+}
+
+
+
+created = []
+
+for path, content in files.items():
+
+    with open(path, "w", encoding="utf-8") as f:
+
+        f.write(content)
+
+    created.append(path)
+
+
+
+# Return list of created files for user to download
+
+created
+
+                             
+    <a href="#traditional" onclick="toggleMenu()">Traditional</a>
+
+    <a href="#urban" onclick="toggleMenu()">Urban</a>
+
+    <a href="#casual" onclick="toggleMenu()">Casual</a>
+
+    <a href="#craft" onclick="toggleMenu()">Craftsmanship</a>
+
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+
+  </nav>
+
+</header>
+
+
+
+<main class="container">
+
+  <section class="hero card" id="cover">
+
+    <div>
+
+      <h1>Gentlemen of Nigeria</h1>
+
+      <p class="muted">The Premium Men’s Collection — blending Nigerian heritage with global tailoring. From noble agbadas to modern suits, our pieces are crafted for the discerning man.</p>
+
+      <a href="#traditional" class="cta">Explore the Collection</a>
+
+    </div>
+
+    <img src="https://assets.vogue.com/photos/58770777ef8cc67551002b05/master/w_2848%2Ch_4272%2Cc_limit/01-nigerian-fashion-week-mens-street-style.jpg" alt="Nigerian Fashion">
+
+  </section>
+
+
+
+  <section id="vision" class="card">
+
+    <h2>Our Vision</h2>
+
+    <p class="muted">We celebrate the modern Nigerian gentleman — combining traditional craftsmanship with contemporary silhouettes.</p>
+
+  </section>
+
+
+
+  <section id="traditional" class="card">
+
+    <h2>Traditional Heritage Wear</h2>
+
+    <p class="muted">Regal Agbadas · Modern Kaftans · Senator Wear</p>
+
+    <div class="gallery">
+
+      <a href="traditional.html"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5295786566_n7me.jpg?v=1703837852" alt="Agbada"></a>
+
+      <a href="traditional.html"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5344251201_svly.jpg?v=1698360220" alt="Kaftan"></a>
+
+      <a href="traditional.html"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5340655073_k4ps.jpg?v=1698360176" alt="Senator Wear"></a>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="urban" class="card">
+
+    <h2>Urban & Business Attire</h2>
+
+    <p class="muted">Tailored suits, statement blazers and smart casuals.</p>
+
+    <div class="grid">
+
+      <a href="urban.html"><img src="https://i.etsystatic.com/21267747/r/il/5c6a89/2252931332/il_fullxfull.2252931332_kjv5.jpg" alt="Suit"></a>
+
+      <a href="urban.html"><img src="https://i.etsystatic.com/13094714/r/il/44137a/4251093012/il_fullxfull.4251093012_onaj.jpg" alt="Blazer"></a>
+
+      <a href="urban.html"><img src="https://www.diyanu.com/cdn/shop/products/Enofe-Mens-African-Print-1.jpg?v=1760579351" alt="Smart Casual"></a>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="casual" class="card">
+
+    <h2>Casual & Lifestyle</h2>
+
+    <p class="muted">Statement shirts, premium denim & relaxed fits.</p>
+
+    <div class="grid">
+
+      <a href="casual.html"><img src="https://m.media-amazon.com/images/I/51LhCyk%2BngL.jpg" alt="Casual"></a>
+
+      <a href="casual.html"><img src="https://kipfashion.com/wp-content/uploads/2020/08/Bobby-African-print-embroidery-shirt.jpg" alt="Print Shirt"></a>
+
+      <a href="casual.html"><img src="https://cdn.businessday.ng/wp-content/uploads/2024/10/Untitled-design-63-1.png" alt="Street Style"></a>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="craft" class="card">
+
+    <h2>Craftsmanship & Fabric</h2>
+
+    <p class="muted">Tailoring, textures and attention to detail.</p>
+
+    <div class="grid">
+
+      <a href="craftsmanship.html"><img src="https://res.cloudinary.com/sagacity/image/upload/c_crop%2Ch_4800%2Cw_3397%2Cx_0%2Cy_0/c_limit%2Cdpr_auto%2Cf_auto%2Cfl_lossy%2Cq_80%2Cw_1080/0118-style-tony-iyke_twrxks.jpg" alt="Fabric"></a>
+
+      <a href="craftsmanship.html"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5299697147_gvzy.jpg?v=1698366208" alt="Tailoring"></a>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="contact" class="card">
+
+    <h2>Contact & Showroom</h2>
+
+    <div class="contact">
+
+      <div class="tag">25 Adewale Street, VI, Lagos</div>
+
+      <div class="tag">info@gentlemenofnigeria.ng</div>
+
+      <div class="tag">+234 800 123 4567</div>
+
+    </div>
+
+  </section>
+
+
+
+  <footer>
+
+    &copy; 2025 Gentlemen of Nigeria • Designed for the distinguished Nigerian gentleman
+
+  </footer>
+
+</main>
+
+
+
+<a href="#contact" class="floating-cta">📞 Book a Fitting</a>
+
+
+
+<script>
+
+function toggleMenu(){
+
+  const menu=document.getElementById('mobileMenu');
+
+  const isHidden = menu.getAttribute('aria-hidden') === 'true';
+
+  menu.style.display = isHidden ? 'flex' : 'none';
+
+  menu.setAttribute('aria-hidden', !isHidden);
+
+}
+
+</script>
+
+</body>
+
+</html>
+
+
+
+    <!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Traditional Heritage — Gentlemen of Nigeria</title>
+
+<style>:root{--gold:#d4af37;--bg:#fff;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}p.muted{color:var(--muted)}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover} .grid{display:grid;gap:10px} @media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}} .card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 10px 20px rgba(16,24,40,0.06)} .back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
+
+<header><div class="brand">Gentlemen of Nigeria — Traditional Heritage</div></header>
+
+<main>
+
+  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+
+  <h1>Traditional Heritage Collection</h1>
+
+  <p class="muted">Agbadas · Kaftans · Senator Wear — curated for ceremonial and formal moments.</p>
+
+  <div class="hero" style="margin-top:12px;"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5295786566_n7me.jpg?v=1703837852" alt="Hero Agbada"></div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5295786566_n7me.jpg?v=1703837852" alt="1">
+
+    <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5344251201_svly.jpg?v=1698360220" alt="2">
+
+    <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5340655073_k4ps.jpg?v=1698360176" alt="3">
+
+    <img src="https://otunbastore.com/cdn/shop/files/4.png?v=1708225884&width=1946" alt="4">
+
+    <img src="https://otunbastore.com/cdn/shop/files/10.png?v=1708225557&width=1946" alt="5">
+
+    <img src="https://otunbastore.com/cdn/shop/files/43c01ca3ae51e54f863a89d9fba3bafe_a514d53575f8.jpg?v=1708225682" alt="6">
+
+    <img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c" alt="7">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11" alt="8">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11?ixlib=rb-4.0.3&q=80&w=1200&auto=format&fit=crop&crop=faces" alt="9">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="10">
+
+  </div>
+
+</main>
+
+</body></html>""",
+
+
+
+    "/mnt/data/urban.html": """<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Urban & Business — Gentlemen of Nigeria</title>
+
+<style>:root{--gold:#d4af37;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover}.grid{display:grid;gap:10px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}.back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
+
+<header><div class="brand">Gentlemen of Nigeria — Urban & Business</div></header>
+
+<main>
+
+  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+
+  <h1>Urban & Business Collection</h1>
+
+  <p class="muted">Suits · Blazers · Smart casual — city-ready tailoring and statement pieces.</p>
+
+  <div class="hero" style="margin-top:12px;"><img src="https://i.etsystatic.com/21267747/r/il/5c6a89/2252931332/il_fullxfull.2252931332_kjv5.jpg" alt="Hero Suit"></div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <img src="https://i.etsystatic.com/21267747/r/il/5c6a89/2252931332/il_fullxfull.2252931332_kjv5.jpg" alt="1">
+
+    <img src="https://i.etsystatic.com/13094714/r/il/44137a/4251093012/il_fullxfull.4251093012_onaj.jpg" alt="2">
+
+    <img src="https://www.diyanu.com/cdn/shop/products/Enofe-Mens-African-Print-1.jpg?v=1760579351" alt="3">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11" alt="4">
+
+    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="5">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="6">
+
+    <img src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg" alt="7">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11?ixlib=rb-4.0.3&q=80&w=1200&auto=format&fit=crop&crop=faces" alt="8">
+
+    <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" alt="9">
+
+    <img src="https://images.unsplash.com/photo-1531123414780-f403c4f2d5cc" alt="10">
+
+  </div>
+
+</main>
+
+</body></html>""",
+
+
+
+    "/mnt/data/casual.html": """<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Casual & Lifestyle — Gentlemen of Nigeria</title>
+
+<style>:root{--gold:#d4af37;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover}.grid{display:grid;gap:10px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}.back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
+
+<header><div class="brand">Gentlemen of Nigeria — Casual & Lifestyle</div></header>
+
+<main>
+
+  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+
+  <h1>Casual & Lifestyle Collection</h1>
+
+  <p class="muted">Relaxed fits, prints and weekend-ready looks.</p>
+
+  <div class="hero" style="margin-top:12px;"><img src="https://m.media-amazon.com/images/I/51LhCyk%2BngL.jpg" alt="Hero Casual"></div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <img src="https://m.media-amazon.com/images/I/51LhCyk%2BngL.jpg" alt="1">
+
+    <img src="https://kipfashion.com/wp-content/uploads/2020/08/Bobby-African-print-embroidery-shirt.jpg" alt="2">
+
+    <img src="https://cdn.businessday.ng/wp-content/uploads/2024/10/Untitled-design-63-1.png" alt="3">
+
+    <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg" alt="4">
+
+    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="5">
+
+    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="6">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="7">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11" alt="8">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="9">
+
+    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="10">
+
+  </div>
+
+</main>
+
+</body></html>""",
+
+
+
+    "/mnt/data/craftsmanship.html": """<!doctype html>
+
+<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Craftsmanship — Gentlemen of Nigeria</title>
+
+<style>:root{--gold:#d4af37;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover}.grid{display:grid;gap:10px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}.back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
+
+<header><div class="brand">Gentlemen of Nigeria — Craftsmanship</div></header>
+
+<main>
+
+  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+
+  <h1>Craftsmanship & Details</h1>
+
+  <p class="muted">Close-ups on tailoring, texture and finishes.</p>
+
+  <div class="hero" style="margin-top:12px;"><img src="https://res.cloudinary.com/sagacity/image/upload/c_crop%2Ch_4800%2Cw_3397%2Cx_0%2Cy_0/c_limit%2Cdpr_auto%2Cf_auto%2Cfl_lossy%2Cq_80%2Cw_1080/0118-style-tony-iyke_twrxks.jpg" alt="Hero Craftsmanship"></div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <img src="https://res.cloudinary.com/sagacity/image/upload/c_crop%2Ch_4800%2Cw_3397%2Cx_0%2Cy_0/c_limit%2Cdpr_auto%2Cf_auto%2Cfl_lossy%2Cq_80%2Cw_1080/0118-style-tony-iyke_twrxks.jpg" alt="1">
+
+    <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5299697147_gvzy.jpg?v=1698366208" alt="2">
+
+    <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="3">
+
+    <img src="https://images.unsplash.com/photo-1520975911434-6f2f07c22b11" alt="4">
+
+    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="5">
+
+    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="6">
+
+    <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg" alt="7">
+
+    <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" alt="8">
+
+    <img src="https://images.unsplash.com/photo-1531123414780-f403c4f2d5cc" alt="9">
+
+    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="10">
+
+  </div>
+
+</main>
+
+</body></html>
+
+
+    
   <main class="container">
 
     <section class="hero card" id="cover">
