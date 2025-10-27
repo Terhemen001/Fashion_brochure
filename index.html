@@ -1,0 +1,328 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Gentlemen of Nigeria — Men’s Fashion Brochure</title>
+
+  <style>
+
+    :root{--bg:#f6f6f7;--charcoal:#111213;--gold:#d4af37;--muted:#6b7280;--card:#ffffff;}
+
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--charcoal);background:var(--bg);-webkit-font-smoothing:antialiased;}
+
+    .nav{background:linear-gradient(90deg, rgba(17,17,19,0.98), rgba(17,17,19,0.95));position:sticky;top:0;z-index:40;padding:12px 20px;box-shadow:0 6px 18px rgba(6,7,9,0.12);}
+
+    .nav .wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+
+    .brand{color:var(--gold);font-weight:700;letter-spacing:0.6px;}
+
+    .menu{display:flex;gap:14px;}
+
+    .menu a{color:#fff;text-decoration:none;font-size:14px;padding:8px 10px;border-radius:8px;opacity:0.95;}
+
+    .menu a:hover{background:rgba(255,255,255,0.04);}
+
+    .container{max-width:1200px;margin:28px auto;padding:0 18px;}
+
+    .hero{display:flex;flex-direction:column;gap:18px;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.00));padding:22px;border-radius:14px;}
+
+    .hero-inner{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center;}
+
+    .hero h1{margin:0;font-size:34px;color:var(--charcoal);}
+
+    .hero p.lead{margin:6px 0;color:var(--muted);font-size:15px;line-height:1.5;}
+
+    .cta{background:var(--gold);color:var(--charcoal);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;}
+
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 10px 30px rgba(16,24,40,0.06);}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:14px;}
+
+    .grid img{width:100%;height:180px;object-fit:cover;border-radius:8px;}
+
+    h2.section-title{font-size:20px;margin:0 0 8px 0;color:var(--charcoal);}
+
+    p.muted{color:var(--muted);margin:0 0 12px 0;}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+    footer{margin-top:28px;padding:30px 18px;text-align:center;color:var(--muted);font-size:14px;}
+
+    .contact{display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:center;}
+
+    .tag{display:inline-block;background:#f2f2f2;padding:6px 10px;border-radius:999px;font-size:13px;color:#444;}
+
+    @media(max-width:920px){ .hero-inner{grid-template-columns:1fr;} .two-col{grid-template-columns:1fr;} .menu{display:none;} }
+
+    nav .menu-toggle{display:none;}
+
+    .nav .actions{display:flex;gap:8px;align-items:center;}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;}
+
+    .small{font-size:13px;color:var(--muted);}
+
+    .divider{height:1px;background:#eef2f6;margin:18px 0;border-radius:2px;}
+
+    html {scroll-behavior:smooth;}
+
+  </style>
+
+</head>
+
+<body>
+
+  <header class="nav">
+
+    <div class="wrap">
+
+      <div class="brand">Gentlemen of Nigeria</div>
+
+      <nav class="menu" aria-label="Main navigation">
+
+        <a href="#vision">Vision</a>
+
+        <a href="#traditional">Traditional</a>
+
+        <a href="#urban">Urban & Business</a>
+
+        <a href="#casual">Casual</a>
+
+        <a href="#craft">Craftsmanship</a>
+
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+      <div class="actions">
+
+        <a class="cta" href="#contact">Book a Fitting</a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="container">
+
+    <section class="hero card" id="cover">
+
+      <div class="hero-inner">
+
+        <div>
+
+          <h1>Gentlemen of Nigeria</h1>
+
+          <p class="lead">The Premium Men’s Collection — blending Nigerian heritage with global tailoring. From noble agbadas to modern suits, our pieces are crafted for the discerning man.</p>
+
+          <div style="margin-top:12px;">
+
+            <a href="#traditional" class="cta">Explore the Collection</a>
+
+            <span style="margin-left:12px;" class="small">• Custom fits • Tailoring • Showroom appointments</span>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <img src="https://assets.vogue.com/photos/58770777ef8cc67551002b05/master/w_2848%2Ch_4272%2Cc_limit/01-nigerian-fashion-week-mens-street-style.jpg" alt="Nigerian Mens Fashion" style="width:100%;border-radius:10px;height:320px;object-fit:cover;">
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="vision" style="margin-top:20px;" class="card">
+
+      <h2 class="section-title">Our Vision</h2>
+
+      <p class="muted">We celebrate the modern Nigerian gentleman — combining traditional craftsmanship with contemporary silhouettes. Our goal: garments that move seamlessly between ceremonial grandeur and everyday polish.</p>
+
+      <div class="divider"></div>
+
+      <div class="two-col">
+
+        <div>
+
+          <h3 style="margin:0 0 6px 0;">Design Philosophy</h3>
+
+          <p class="small">We value heritage, premium fabrics and precision tailoring. Each piece is a conversation between cultural identity and modern taste.</p>
+
+        </div>
+
+        <div>
+
+          <h3 style="margin:0 0 6px 0;">Made in Nigeria</h3>
+
+          <p class="small">Local artisans and factories collaborate to produce pieces that meet global quality standards.</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="traditional" style="margin-top:20px;">
+
+      <div class="card">
+
+        <h2 class="section-title">Traditional Heritage Wear</h2>
+
+        <p class="muted">Regal Agbadas · Modern Kaftans · Senator Wear — tailored for events, ceremonies and cultural pride.</p>
+
+        <div class="gallery" style="margin-top:12px;">
+
+          <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5295786566_n7me.jpg?v=1703837852" alt="Agbada">
+
+          <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5344251201_svly.jpg?v=1698360220" alt="Kaftan">
+
+          <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5340655073_k4ps.jpg?v=1698360176" alt="Senator Wear">
+
+          <img src="https://otunbastore.com/cdn/shop/files/4.png?v=1708225884&width=1946" alt="Traditional 4">
+
+        </div>
+
+        <div style="margin-top:12px;" class="small">Styling tip: Keep accessories minimal to let craftsmanship take centre stage. Pair with leather loafers or classic brogues.</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="urban" style="margin-top:20px;">
+
+      <div class="card">
+
+        <h2 class="section-title">Urban & Business Attire</h2>
+
+        <p class="muted">Tailored suits, statement blazers and smart casuals designed for the boardroom and sophisticated city life.</p>
+
+        <div class="grid" style="margin-top:12px;">
+
+          <img src="https://i.etsystatic.com/21267747/r/il/5c6a89/2252931332/il_fullxfull.2252931332_kjv5.jpg" alt="Suit">
+
+          <img src="https://i.etsystatic.com/13094714/r/il/44137a/4251093012/il_fullxfull.4251093012_onaj.jpg" alt="Blazer">
+
+          <img src="https://www.diyanu.com/cdn/shop/products/Enofe-Mens-African-Print-1.jpg?v=1760579351" alt="Smart Casual">
+
+        </div>
+
+        <div style="margin-top:12px;" class="small">Styling tip: Use monochrome bases and let a pocket square or tie create the accent.</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="casual" style="margin-top:20px;">
+
+      <div class="card">
+
+        <h2 class="section-title">Casual & Lifestyle Collection</h2>
+
+        <p class="muted">Weekends don't have to compromise on style — discover elevated casual shirts, tailored denim and statement prints.</p>
+
+        <div class="grid" style="margin-top:12px;">
+
+          <img src="https://m.media-amazon.com/images/I/51LhCyk%2BngL.jpg" alt="Casual">
+
+          <img src="https://kipfashion.com/wp-content/uploads/2020/08/Bobby-African-print-embroidery-shirt.jpg" alt="Print Shirt">
+
+          <img src="https://cdn.businessday.ng/wp-content/uploads/2024/10/Untitled-design-63-1.png" alt="Street Style">
+
+        </div>
+
+        <div style="margin-top:12px;" class="small">Styling tip: Mix textures — silk‑blend shirts with cotton chinos create depth and visual interest.</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="craft" style="margin-top:20px;">
+
+      <div class="card">
+
+        <h2 class="section-title">Craftsmanship & Fabric</h2>
+
+        <p class="muted">Premium fabrics: wool blends, cotton‑silk mixes, brocade and curated African prints. Every garment passes strict quality checks.</p>
+
+        <div class="grid" style="margin-top:12px;">
+
+          <img src="https://res.cloudinary.com/sagacity/image/upload/c_crop%2Ch_4800%2Cw_3397%2Cx_0%2Cy_0/c_limit%2Cdpr_auto%2Cf_auto%2Cfl_lossy%2Cq_80%2Cw_1080/0118-style-tony-iyke_twrxks.jpg" alt="Fabric">
+
+          <img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5299697147_gvzy.jpg?v=1698366208" alt="Tailoring">
+
+        </div>
+
+        <div style="margin-top:12px;" class="small">Custom tailoring available — book an appointment for precise measurement and fitting.</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="contact" style="margin-top:20px;">
+
+      <div class="card">
+
+        <h2 class="section-title">Contact & Showroom</h2>
+
+        <p class="muted">Ready to elevate your wardrobe? Reach out for fittings, bespoke orders or showroom visits.</p>
+
+        <div class="contact" style="margin-top:12px;">
+
+          <div class="tag">Gentlemen of Nigeria</div>
+
+          <div class="tag">25 Adewale Street, Victoria Island, Lagos</div>
+
+          <div class="tag">info@gentlemenofnigeria.ng</div>
+
+          <div class="tag">+234 800 123 4567</div>
+
+        </div>
+
+        <div style="margin-top:12px;text-align:center;">
+
+          <a class="cta" href="mailto:info@gentlemenofnigeria.ng">Book a Fitting</a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <footer>
+
+      <div style="max-width:980px;margin:0 auto;">&copy; 2025 Gentlemen of Nigeria • Designed for the distinguished Nigerian gentleman • <span class="small">All images used for presentation — replace with client-owned assets for final prints.</span></div>
+
+    </footer>
+
+  </main>
+
+</body>
+
+</html>
+
