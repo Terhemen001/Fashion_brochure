@@ -1,9 +1,30 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Traditional Heritage — Gentlemen of Nigeria</title>
 <style>:root{--gold:#d4af37;--bg:#fff;--muted:#6b7280}body{font-family:Inter,Arial;margin:0;background:#f6f6f7;color:#111}header{background:rgba(17,17,19,0.96);padding:14px 18px}header .brand{color:var(--gold);font-weight:700}main{max-width:1100px;margin:20px auto;padding:16px}h1{margin-bottom:6px}p.muted{color:var(--muted)}.hero img{width:100%;border-radius:10px;height:auto;object-fit:cover} .grid{display:grid;gap:10px} @media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}} .card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 10px 20px rgba(16,24,40,0.06)} .back{display:inline-block;margin:12px 0;padding:8px 12px;background:var(--gold);color:#111;border-radius:8px;text-decoration:none;font-weight:600}</style></head><body>
-<header><div class="brand">Gentlemen of Nigeria — Traditional Heritage</div></header>
+<header><div class="brand">Gentlemen of Nigeria — Traditional Heritage</div>
+<div class="wrap">
+    <div class="brand">Gentlemen of Nigeria</div>
+    <nav class="menu desktop">
+      <a href="#vision">Vision</a>
+      <a href="#traditional">Traditional</a>
+      <a href="#urban">Urban</a>
+      <a href="#casual">Casual</a>
+      <a href="#craft">Craftsmanship</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <nav id="mobileMenu" class="menu mobile" aria-hidden="true">
+    <a href="#vision" onclick="toggleMenu()">Vision</a>
+    <a href="#traditional" onclick="toggleMenu()">Traditional</a>
+    <a href="#urban" onclick="toggleMenu()">Urban</a>
+    <a href="#casual" onclick="toggleMenu()">Casual</a>
+    <a href="#craft" onclick="toggleMenu()">Craftsmanship</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </nav>
+</header>
 <main>
-  <a class="back" href="gentlemen_nigeria_hamburger.html">← Back to Brochure</a>
+  <a class="back" href="index.html">← Back to Brochure</a>
   <h1>Traditional Heritage Collection</h1>
   <p class="muted">Agbadas · Kaftans · Senator Wear — curated for ceremonial and formal moments.</p>
   <div class="hero" style="margin-top:12px;"><img src="https://otunbastore.com/cdn/shop/products/il_fullxfull.5295786566_n7me.jpg?v=1703837852" alt="Hero Agbada"></div>
@@ -20,4 +41,21 @@
     <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" alt="10">
   </div>
 </main>
+  
+  <a href="#contact" class="floating-cta">📞 Book a Fitting</a>
+
+
+
+<script>
+
+function toggleMenu(){
+
+  const menu=document.getElementById('mobileMenu');
+
+  menu.style.display=menu.style.display==='flex'?'none':'flex';
+
+}
+
+</script>
+
 </body></html>
